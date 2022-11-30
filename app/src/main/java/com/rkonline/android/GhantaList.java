@@ -74,9 +74,9 @@ public class GhantaList extends AppCompatActivity {
 
                                 //adding the product to product list
                                 productList.add(new GhantaModel(
-                                        product.getString("result"),
-                                        product.getString("rtime"),
-                                        product.getString("rdate")
+                                        product.getString("status"),
+                                        product.getString("times")
+
                                 ));
                             }
 

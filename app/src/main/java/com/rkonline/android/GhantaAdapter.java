@@ -38,10 +38,20 @@ public class GhantaAdapter extends RecyclerView.Adapter<GhantaAdapter.ProductVie
 
 
 
-        holder.textResult.setText(product.getResult());
-        holder.textTime.setText(product.getRtime());
-        holder.textTime2.setText(String.valueOf(product.getRtime()));
+        //holder.textResult.setText(product.get());
+        holder.textTime.setText(product.getTime());
+        holder.textTime2.setText(String.valueOf(product.getTime()));
 //        holder.textViewPrice.setText(String.valueOf(product.getPrice()));
+        //holder.textStatus.setText(product.getStatus());
+        holder.stat = product.getStatus();
+        if (holder.stat.toString() == "1"){
+            holder.textStatus.setText("OPEN");
+        }else{
+            holder.textStatus.setText("CLOSE");
+
+        }
+
+
     }
 
     @Override
@@ -51,7 +61,9 @@ public class GhantaAdapter extends RecyclerView.Adapter<GhantaAdapter.ProductVie
 
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
-        latobold textResult, textTime, textTime2;
+        latobold textResult, textTime, textTime2, textStatus;
+        String stat ;
+
 
 
 
@@ -61,6 +73,8 @@ public class GhantaAdapter extends RecyclerView.Adapter<GhantaAdapter.ProductVie
            textResult = itemView.findViewById(R.id.result_market_one);
             textTime = itemView.findViewById(R.id.time_market_one);
             textTime2 = itemView.findViewById(R.id.time_market_two);
+            textStatus = itemView.findViewById(R.id.ghanta_market_status);
+
 
         }
     }
