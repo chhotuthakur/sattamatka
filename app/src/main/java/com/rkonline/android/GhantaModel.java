@@ -1,26 +1,35 @@
 package com.rkonline.android;
 
 public class GhantaModel {
-    private String status,times;
+    public String times,statuss,results;
 
-    public GhantaModel(String status, String times) {
-        this.status = status;
+    public GhantaModel(String times, String statuss, String results) {
         this.times = times;
+        this.statuss = statuss;
+        this.results = results;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getTime() {
+    public String getTimes() {
         return times;
     }
 
-    public void setTime(String times) {
+    public void setTimes(String times) {
         this.times = times;
+    }
+
+    public String getStatuss() {
+        return statuss;
+    }
+
+    public void setStatuss(String statuss) {
+        this.statuss = statuss;
+    }
+
+    public String getResults() {
+        return results;
+    }
+
+    public void setResults(String results) {
+        this.results = results;
     }
 }
