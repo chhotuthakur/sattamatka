@@ -43,7 +43,28 @@ public class GhantaListActivity extends AppCompatActivity {
     private void loadData() {
         RequestQueue mreq = Volley.newRequestQueue(this);
 
-        StringRequest stringRequest = new StringRequest()
+        JsonArrayRequest stringRequest = new JsonArrayRequest(Request.Method.GET, API_URL, null,
+				new Response.Listener<JSONArray>() {
+					@Override
+					public void onResponse(JSONArray response) {
+						for (int i = 0; i < response.length(); i++) {
+						try {
+							JSONObject obj = response.getJSONObject(i);
+							String result = obj.getString("results");
+							String times = obj.getString("times");
+							String status = obj.getString("status");
+							ghantaModelList.add(new GhantaModel(times, status, result));
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+						}
+					}
+				}, new Response.ErrorListener() {
+					@Override
+					public void onErrorResponse(VolleyError err) {
+
+					}
+				});
     }
 
 
