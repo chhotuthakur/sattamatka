@@ -30,7 +30,7 @@ public class GhantaListActivity extends AppCompatActivity {
 
 
     ListView listViewg;
-    List<GhantaModel>ghantaModelList;
+    ArrayList<GhantaModel> ghantaModelList;
 	GhantaAdapter hlo;
     public final String API_URL = "https://rkonlinematka.in/api/ghantashow.php";
 
@@ -43,6 +43,7 @@ public class GhantaListActivity extends AppCompatActivity {
         loadData();
 		hlo = new GhantaAdapter(this, ghantaModelList);
 		listViewg.setAdapter(hlo);
+                ((ArrayAdapter)listViewg.getAdapter()).notifyDataSetChanged();
     }
 
     private void loadData() {
@@ -59,6 +60,7 @@ public class GhantaListActivity extends AppCompatActivity {
 							String times = obj.getString("times");
 							String status = obj.getString("status");
 							ghantaModelList.add(new GhantaModel(times, status, result));
+                                                         ((ArrayAdapter)listViewg.getAdapter()).notifyDataSetChanged();     
 					} catch (JSONException e) {
 						e.printStackTrace();
 					}
