@@ -14,16 +14,14 @@ import java.util.List;
 public class GhantaAdapter extends ArrayAdapter<GhantaModel> {
 
 
-    private List<GhantaModel>ghantaModelList;
     private Context context;
 
 
 
-    public GhantaAdapter(@NonNull Context context,List<GhantaModel>ghantaModelList ) {
+    public GhantaAdapter(@NonNull Context context,ArrayList<GhantaModel>ghantaModelList ) {
         super(context,R.layout.ghanta_layout_one,ghantaModelList);
 
         this.context = context;
-        this.ghantaModelList=ghantaModelList;
 
     }
 
@@ -37,7 +35,7 @@ public class GhantaAdapter extends ArrayAdapter<GhantaModel> {
         latobold tTimes = view.findViewById(R.id.time_market_one);
         latobold tStatus = view.findViewById(R.id.ghanta_market_status);
         //Getting the superHero for the specified position
-        GhantaModel ghantaModel = ghantaModelList.get(position);
+        GhantaModel ghantaModel = getItem(position);
         //setting superHero values to textviews
         tTimes.setText(ghantaModel.getTimes());
         tStatus.setText(ghantaModel.getStatuss());
