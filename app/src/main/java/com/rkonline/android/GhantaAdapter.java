@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
-
+import Java.util.ArrayList;
 public class GhantaAdapter extends ArrayAdapter<GhantaModel> {
 
 
