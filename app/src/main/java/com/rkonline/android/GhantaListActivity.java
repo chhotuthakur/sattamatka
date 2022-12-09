@@ -36,8 +36,9 @@ public class GhantaListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ghanta_list2);
         listViewg =(ListView) findViewById(R.id.listViewGhanta);
         ghantaModelList = new ArrayList<>();
-
         loadData();
+		ArrayAdapter<GhantaModel> hlo = new GhantaAdapter<GhantaModel>(this, ghantaModelList);
+		listViewg.setAdapter(hlo);
     }
 
     private void loadData() {
