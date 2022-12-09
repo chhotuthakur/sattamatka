@@ -15,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.JsonArrayRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,12 +23,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.rkonline.android.GhantaAdapter;
+import com.rkonline.android.GhantaModel;
 
 public class GhantaListActivity extends AppCompatActivity {
 
 
     ListView listViewg;
     List<GhantaModel>ghantaModelList;
+	GhantaAdapter hlo;
     public final String API_URL = "https://rkonlinematka.in/api/ghantashow.php";
 
     @Override
@@ -37,7 +41,7 @@ public class GhantaListActivity extends AppCompatActivity {
         listViewg =(ListView) findViewById(R.id.listViewGhanta);
         ghantaModelList = new ArrayList<>();
         loadData();
-		ArrayAdapter<GhantaModel> hlo = new GhantaAdapter<GhantaModel>(this, ghantaModelList);
+		hlo = new GhantaAdapter(this, ghantaModelList);
 		listViewg.setAdapter(hlo);
     }
 
