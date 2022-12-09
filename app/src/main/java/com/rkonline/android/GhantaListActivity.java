@@ -70,6 +70,7 @@ public class GhantaListActivity extends AppCompatActivity {
 
 					}
 				});
+                              mreq.add(stringRequest);
     }
 
 
