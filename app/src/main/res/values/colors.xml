@@ -17,4 +17,6 @@
     <color name="lightfont">#C9262933</color>
     <!--    <color name="back">#f8f8f8</color>-->
     <color name="back">#5BD8E4EA</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
 </resources>

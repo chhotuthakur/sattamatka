@@ -1,6 +1,7 @@
 package com.rkonline.android;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,13 @@ public class GhantaAdapter extends ArrayAdapter<GhantaModel> {
         GhantaModel ghantaModel = getItem(position);
         //setting superHero values to textviews
         tTimes.setText(ghantaModel.getTimes());
-        tStatus.setText(ghantaModel.getStatuss());
+        if (ghantaModel.getStatus().toString()!="2") {
+            tStatus.setText("Open");
+            //tStatus.setTextColor(getView().R.color.green);
+        }else{
+            tStatus.setText("Closed");
+        }
+
         //returning the listitem
         return view;
     }

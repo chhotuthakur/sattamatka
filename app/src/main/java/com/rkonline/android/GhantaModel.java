@@ -1,12 +1,11 @@
 package com.rkonline.android;
 
 public class GhantaModel {
-    public String times,statuss,results;
+    public String times, status;
 
-    public GhantaModel(String times, String statuss, String results) {
+    public GhantaModel(String times, String status) {
         this.times = times;
-        this.statuss = statuss;
-        this.results = results;
+        this.status = status;
     }
 
     public String getTimes() {
@@ -17,19 +16,11 @@ public class GhantaModel {
         this.times = times;
     }
 
-    public String getStatuss() {
-        return statuss;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStatuss(String statuss) {
-        this.statuss = statuss;
-    }
-
-    public String getResults() {
-        return results;
-    }
-
-    public void setResults(String results) {
-        this.results = results;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

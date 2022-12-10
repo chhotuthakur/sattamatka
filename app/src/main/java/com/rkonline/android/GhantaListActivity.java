@@ -2,10 +2,14 @@ package com.rkonline.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -44,6 +48,18 @@ public class GhantaListActivity extends AppCompatActivity {
 		hlo = new GhantaAdapter(this, ghantaModelList);
 		listViewg.setAdapter(hlo);
                 ((ArrayAdapter)listViewg.getAdapter()).notifyDataSetChanged();
+
+				listViewg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+					@Override
+					public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+						String time = ((TextView)adapterView.findViewById(R.id.time_market_one)).getText().toString();
+						Intent intent = new Intent(GhantaListActivity.this,GhantaMenuActivity.class);
+						intent.putExtra("time",time);
+						startActivity(intent);
+
+					}
+				});
+
     }
 
     private void loadData() {
@@ -56,11 +72,13 @@ public class GhantaListActivity extends AppCompatActivity {
 						for (int i = 0; i < response.length(); i++) {
 						try {
 							JSONObject obj = response.getJSONObject(i);
-							String result = obj.getString("results");
-							String times = obj.getString("times");
-							String status = obj.getString("status");
-							ghantaModelList.add(new GhantaModel(times, status, result));
-                                                         ((ArrayAdapter)listViewg.getAdapter()).notifyDataSetChanged();     
+								//String result = obj.getString("results");
+
+								String times = obj.getString("times");
+								String status = obj.getString("status");
+								ghantaModelList.add(new GhantaModel(times, status));
+								((ArrayAdapter) listViewg.getAdapter()).notifyDataSetChanged();
+
 					} catch (JSONException e) {
 						e.printStackTrace();
 					}
