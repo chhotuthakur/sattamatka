@@ -20,6 +20,7 @@ public class GhantaAdapter extends ArrayAdapter<GhantaModel> {
 
 
 
+
     public GhantaAdapter(@NonNull Context context,ArrayList<GhantaModel>ghantaModelList ) {
         super(context,R.layout.ghanta_layout_one,ghantaModelList);
 
@@ -40,9 +41,9 @@ public class GhantaAdapter extends ArrayAdapter<GhantaModel> {
         GhantaModel ghantaModel = getItem(position);
         //setting superHero values to textviews
         tTimes.setText(ghantaModel.getTimes());
-        if (ghantaModel.getStatus().toString()!="2") {
+        if (ghantaModel.getStatus().toString() !="2") {
             tStatus.setText("Open");
-            //tStatus.setTextColor(getView().R.color.green);
+            tStatus.setTextColor(Color.GREEN);
         }else{
             tStatus.setText("Closed");
         }

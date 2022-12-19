@@ -29,7 +29,8 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:padding="12dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/single_patti_ll">
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
@@ -46,7 +47,8 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:padding="12dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/double_patti_ll">
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
@@ -67,7 +69,8 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:padding="12dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/triple_patti_ll">
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
@@ -84,7 +87,8 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:padding="12dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/triple_dhamaka_ll">
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"

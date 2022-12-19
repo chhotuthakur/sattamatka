@@ -52,10 +52,14 @@ public class GhantaListActivity extends AppCompatActivity {
 				listViewg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 					@Override
 					public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-						String time = ((TextView)adapterView.findViewById(R.id.time_market_one)).getText().toString();
+						String time = listViewg.getItemAtPosition(i).toString().trim();
+						
+//						String time = ((latobold)adapterView.findViewById(R.id.time_market_one)).getText().toString().trim();
 						Intent intent = new Intent(GhantaListActivity.this,GhantaMenuActivity.class);
 						intent.putExtra("time",time);
+
 						startActivity(intent);
+
 
 					}
 				});
