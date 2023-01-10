@@ -32,7 +32,7 @@ import com.rkonline.android.GhantaModel;
 
 public class GhantaListActivity extends AppCompatActivity {
 
-
+//	latobold timetext;
     ListView listViewg;
     ArrayList<GhantaModel> ghantaModelList;
 	GhantaAdapter hlo;
@@ -45,6 +45,7 @@ public class GhantaListActivity extends AppCompatActivity {
         listViewg =(ListView) findViewById(R.id.listViewGhanta);
         ghantaModelList = new ArrayList<>();
         loadData();
+//		timetext = (latobold) findViewById(R.id.time_market_one) ;
 		hlo = new GhantaAdapter(this, ghantaModelList);
 		listViewg.setAdapter(hlo);
                 ((ArrayAdapter)listViewg.getAdapter()).notifyDataSetChanged();
@@ -52,8 +53,9 @@ public class GhantaListActivity extends AppCompatActivity {
 				listViewg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 					@Override
 					public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-						String time = listViewg.getItemAtPosition(i).toString().trim();
-						
+//						String time = listViewg.getItemAtPosition(i).toString().trim();
+						String time = String.valueOf((TextView)adapterView.findViewById(R.id.time_market_one));
+
 //						String time = ((latobold)adapterView.findViewById(R.id.time_market_one)).getText().toString().trim();
 						Intent intent = new Intent(GhantaListActivity.this,GhantaMenuActivity.class);
 						intent.putExtra("time",time);
