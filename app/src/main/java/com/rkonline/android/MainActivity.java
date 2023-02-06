@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
 
-                            JSONObject jsonObject1 = new JSONObject(response);
+                            JSONObject jsonObject1 = new JSONObject("{response}");
 
                             if (jsonObject1.getString("active").equals("0")) {
                                 Toast.makeText(MainActivity.this, "Your account temporarily disabled by admin", Toast.LENGTH_SHORT).show();
